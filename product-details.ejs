@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Product Details</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Department</a></li>
+            <li><a href="#">Services</a></li>
+            <li class="signup"><a href="#">Login/Signup</a></li>
+        </ul>
+    </nav>
+
+    <section class="product-details">
+        <div class="product-image">
+          <a href="/product/<%= product._id %>"></a> 
+          <img src="<%= product.imagePath %>" alt="<%= product.clothes %>">
+        
+        </div>
+        <div class="product-info">
+            <h1><%= product.clothes %></h1>
+            <a href="/product/<%= product._id %>"></a>
+            <p><strong>Color:</strong> <%= product.color %></p>
+            <p><strong>Price:</strong> $<%= product.price %></p>
+            <p><strong>Description:</strong> <%= product.description %></p><br>
+        </div>
+        
+        
+    </section>
+</body>
+</html>

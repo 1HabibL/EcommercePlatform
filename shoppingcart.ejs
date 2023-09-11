@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href ="http://localhost:3000">Home</a></li>
+            <li><a href ="#">Deparment</a></li>
+            <li><a href ="#">Services</a></li>
+            <li class="signup"><a href ="#">Login/Signup</a></li>
+            <li><a href="shoppingcart">Shopping Cart</a></li>
+        </ul>
+      
+    </nav>
+    
+    
+        <section class="shopping-cart">
+            <h1>Your Shopping Cart</h1>
+            <div class="cart-items">
+              <% shoppingCart.forEach((item) => { %>
+                <div class="cart-item">
+                  <img class="productpicture" src="<%= item.imagePath %>" alt="<%= item.clothes %>">
+                  <div class="productdetails">
+                  <h3 id="clothtitle"><%= item.clothes %></h3>
+                  <p  id="clothcolor">Color: <%= item.color %></p>
+                  <p  id="clothprice">Price: $<%= item.price %></p>
+                  <p><strong>Description:</strong> <%= item.description %></p>
+                </div>
+                <form action="/remove-from-cart" method="post">
+                  <input type="hidden" name="productId" value="<%= item._id %>">
+                  <button type="submit">Remove</button>
+                </form>
+                </div>
+              <% }); %>
+            </div>
+          </section>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href ="#">Home</a></li>
+            <li><a href ="#">Deparment</a></li>
+            <li><a href ="#">Services</a></li>
+            <li class="signup"><a href ="#">Login/Signup</a></li>
+            <li><a href ="shoppingcart">Shopping Cart</a></li>
+        </ul>
+      
+    </nav>
+    
+    <section class="heropage">
+        <h1>Habib Ecommerce Site</h1>
+        
+        <form id="searchform" action="/search" method="get">
+            <input id="searchbar" type="text" name="query" placeholder="Search...">
+            <button type="submit">GO</button>
+        </form>
+    </section>
+
+    <! --
+
+
+    <section class="contentpage">
+    <h1 class="contentheader">Featured items</h1>
+ 
+      
+    <div class="products">
+      <% data.forEach((item) => { %>
+        <div class="product">
+          <a href="/product/<%= item._id %>">
+            <img src="<%= item.imagePath %>" alt="<%= item.clothes %>">
+            <strong>Clothes: <%= item.clothes %></strong><br>
+            Color: <%= item.color %><br>
+            Price: $<%= item.price %>
+          </a>
+           <!-- Add to Cart button -->
+           <form action="/add-to-cart" method="post">
+            <input type="hidden" name="productId" value="<%= item._id %>">
+            <button type="submit">Add to Cart</button>
+          </form>
+        </div>
+      <% }); %>
+    </div>
+
+
+    
+  </section>
+</body>
+</html>
+
